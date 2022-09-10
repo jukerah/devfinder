@@ -9,7 +9,7 @@ export const ThemeColorButton = () => {
       localStorage.setItem('themeMode', 'dark');
       setThemeColor('dark');
       document.documentElement.classList.add('dark')
-    }
+    } else document.documentElement.classList.add(themeColor);
   }, [themeColor]);
 
   const handleModeButton = () => {
