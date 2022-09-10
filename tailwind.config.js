@@ -19,6 +19,10 @@ module.exports = {
       'bigStone': '#141D2F',
       'cloudBurst': '#1E2A47',
     },
+    screens: {
+      'sm': '420px',
+      'md': '630px'
+    },
     extend: {},
   },
   plugins: [],

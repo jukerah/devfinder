@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
+import { svg } from '../../data/svgList';
 
 export const ThemeColorButton = () => {
-  const [ themeColor, setThemeColor ] = useState(localStorage.getItem("themeMode"));
+  const [ themeColor, setThemeColor ] = useState(localStorage.getItem('themeMode'));
 
   useEffect(() => {
     if (themeColor === null) {
-      localStorage.setItem("themeMode", "dark");
+      localStorage.setItem('themeMode', 'dark');
       setThemeColor('dark');
       document.documentElement.classList.add('dark')
     }
@@ -13,18 +14,28 @@ export const ThemeColorButton = () => {
 
   const handleModeButton = () => {
     if (themeColor === 'dark') {
-      localStorage.setItem("themeMode", "light");
+      localStorage.setItem('themeMode', 'light');
       setThemeColor('light');
       document.documentElement.classList.add('light');
       document.documentElement.classList.remove('dark')
     } else {
-      localStorage.setItem("themeMode", "dark");
+      localStorage.setItem('themeMode', 'dark');
       setThemeColor('dark');
       document.documentElement.classList.add('dark');
       document.documentElement.classList.remove('light');
     }
   }
   
-  return <button onClick={handleModeButton}>{(themeColor === 'dark') ? 'light' : 'dark' }</button>;
+  return (
+    <button
+      className='text-kashmirBlue dark:text-white flex items-center text-base md:text-xl uppercase font-bold pt-2 pb-2 pl-2'
+      onClick={handleModeButton}
+    >
+      {(themeColor === 'dark')
+        ? <>light {svg.icon.sun}</>
+        : <>dark {svg.icon.moon}</>
+      }
+    </button>
+  );
 }
 

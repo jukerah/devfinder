@@ -4,14 +4,15 @@ import './App.css';
 import { SearchBar } from './components/SearchBar';
 import { ProfileCard } from './components/ProfileCard';
 import { ThemeColorButton } from './components/ThemeColorButton';
+import { Loading } from './components/Loading';
 
-function App() {
+const App = () => {
   const [ user, SetUser ] = useState(null);
   const [ isLoading, SetIsLoading ] = useState(false);
   const [ hasError, SetHasError ] = useState(false);
 
   useEffect(() => {
-    fetchUser('github');
+    fetchUser('jukerah');
   }, []);
 
   const fetchUser = async(username) => {
@@ -26,33 +27,37 @@ function App() {
       SetHasError(false);
     } catch(err) { SetHasError(true); }
     
-    SetIsLoading(false);
+    setTimeout(() => {
+      SetIsLoading(false);
+    }, 1000);
   }
 
   const handleSearchButton = (username) => fetchUser(username);
   
   return (
-    <div className='bg-zircon dark:bg-cloudBurst w-screen h-screen flex justify-center items-center flex-col'>
-      <div>
-        <h1 className='text-3xl font-bold'>
-          devfinder
-        </h1>
-        <ThemeColorButton />
+    <section className='bg-zircon dark:bg-bigStone w-screen h-screen flex items-center flex-col p-6 lg:p-8'>
+      <div className='flex flex-col w-full max-w-xl gap-4'>
+        <header className='flex justify-between'>
+          <h1 className='text-kashmirBlue dark:text-white flex items-center text-3xl md:text-4xl font-bold'>
+            devfinder
+          </h1>
+          <ThemeColorButton />
+        </header>
+
+        <SearchBar
+          searchButton={handleSearchButton}
+          userFound={!hasError}
+          onClearError={() => SetHasError(false)}
+        />
+
+        {isLoading && <Loading />}
+
+        {(user && !hasError)
+          ? !isLoading && <ProfileCard user={user} notFound={false} />
+          : !isLoading && <ProfileCard user={user} notFound={true} />
+        }
       </div>
-
-      <SearchBar
-        searchButton={handleSearchButton}
-        userFound={!hasError}
-        onClearError={() => SetHasError(false)}
-      />
-
-      {isLoading && <p>Loading...</p>}
-
-      {(user && !hasError)
-        ? <ProfileCard user={user} notFound={false} />
-        : <ProfileCard user={user} notFound={true} />
-      }
-    </div>
+    </section>
   );
 }
 
