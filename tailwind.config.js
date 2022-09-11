@@ -11,6 +11,8 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#FFFFFF',
+      'gray': '#D1D5DB',
+      'slate': '#64748B',
       'zircon': '#F6F8FF',
       'kashmirBlue': '#4B6A9B',
       'ebonyClay': '#2B3442',
@@ -21,7 +23,7 @@ module.exports = {
     },
     screens: {
       'sm': '420px',
-      'md': '630px'
+      'md': '700px'
     },
     extend: {},
   },

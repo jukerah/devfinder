@@ -34,8 +34,8 @@ const App = () => {
   const handleSearchButton = (username) => fetchUser(username);
   
   return (
-    <section className='bg-zircon dark:bg-bigStone w-screen h-screen flex items-center flex-col p-6 lg:p-8'>
-      <div className='flex flex-col w-full max-w-xl gap-4'>
+    <section className='bg-zircon dark:bg-bigStone w-screen min-h-screen flex items-center flex-col p-6 lg:p-8'>
+      <div className='flex flex-col w-full max-w-2xl gap-4'>
         <header className='flex justify-between'>
           <h1 className='text-kashmirBlue dark:text-white flex items-center text-3xl md:text-4xl font-bold'>
             devfinder
