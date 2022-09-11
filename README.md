@@ -17,32 +17,47 @@
 
 <h2 id="about" align="center">Descrição do Projeto</h2>
 
-<p align="left">Este desafio é construir uma aplicação para pesquisar usuário do GitHub e retornar dados do perfil.</p>
+<p align="left">Este é um desafio do site Frontend Mentor. O desafio é construir uma aplicação para pesquisar usuário do GitHub e retornar dados do perfil.</p>
 <p align="left">Link do desafio no Frontend Mentor:</p>
 <a href="https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6">https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6</a>
 <hr>
-<p align="left">Funcionalidades solicitadas:</p>
-<p align="left">•	.....
 
-<p align="left">Desafios técnicos superados neste projeto:</p>
-<p align="left">•	.....
+<p align="left">Tecnologias utilizadas:</p>
+
+* React.js
+* JavaScript
+* Tailwind CSS
+* API GitHub
 
 <hr/>
 
 <h2 id="demo-project" align="center">Demonstração do projeto</h2>
-<a href="#" align="left">...</a>
+<a href="https://devfinder-j35p36vcx-jukamebaj-gmailcom.vercel.app/" align="left">https://devfinder-j35p36vcx-jukamebaj-gmailcom.vercel.app/</a>
 
 <hr/>
 
 <h2 id="features" align="center">Features</h2>
 
-- [] ...
+- [X] Header
+- [X] SeachBar
+- [X] ProfileCard
+- [X] Loading
+- [X] NotFound
+- [X] ThemeColorButton
+- [X] Deploy
 
 <hr/>
 
 <h2 id="pre-req" align="center">Pré-requisitos e instalação do projeto</h2>
 
-<p align="left">...</p>
+#### Instalação:
+#### `npm install`
+
+#### Execução:
+#### `npm start`
+
+#### Build:
+#### `npm run build`
 
 ### Autor
 ---
